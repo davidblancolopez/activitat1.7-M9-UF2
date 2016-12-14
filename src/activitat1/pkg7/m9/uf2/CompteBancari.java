@@ -3,8 +3,8 @@ package activitat1.pkg7.m9.uf2;
 
 
 public class CompteBancari {
-    //El compte bancari comença amb 100.
-    private int compte = 100;
+    //Array on es guardaran i s'agafaran els valors.
+    int contenedor [] = new int[10];
     private boolean contenedorLleno = Boolean.FALSE;
 
     /**
@@ -14,12 +14,10 @@ public class CompteBancari {
      */
     public synchronized void retirar(int value) {
 
-        while (contenedorLleno || ((compte - value) < 0) ) {
+        while (contenedorLleno) {
             try {
                 wait();
-                if(compte - value < 0){
-                    System.out.println("Intent de retirada: " + value );
-                }            
+                
             } catch (InterruptedException e) {
                 System.err.println("Contenedor: Error en retirar -> " + e.getMessage());
             }
@@ -27,9 +25,7 @@ public class CompteBancari {
 
         contenedorLleno = !contenedorLleno;
         
-            compte -= value;
-
-            System.out.println("Retirada: " + value + "\nSALDO ACTUAL:" + compte);
+            
 
 
         contenedorLleno = !contenedorLleno;
@@ -53,8 +49,7 @@ public class CompteBancari {
         
         contenedorLleno = !contenedorLleno;
         
-        compte += value;
-        System.out.println("Ingres: " + value + "\nSALDO ACTUAL:" + compte);
+        
         
         contenedorLleno = !contenedorLleno;
         notifyAll();
