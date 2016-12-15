@@ -31,6 +31,7 @@ public class Buffer {
         }
  
         buffer.get(comptadorRetirar);
+        buffer.remove(comptadorRetirar);
         
         comptadorRetirar ++;
             
