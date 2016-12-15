@@ -11,7 +11,7 @@ public class Retirar implements Runnable {
 
     private final CompteBancari contenedor;
     private final Random aleatorio;
-    private final int TIEMPOESPERA = 1500;
+    private final int TIEMPOESPERA = 1000;
 
     /**
      * Constructor de la clase Retirar.
@@ -30,7 +30,7 @@ public class Retirar implements Runnable {
     public void run() {
         while (Boolean.TRUE) {
             
-            int quitar = aleatorio.nextInt(50);
+            int quitar = aleatorio.nextInt(10);
             
             contenedor.retirar(quitar);
             try {
