@@ -10,7 +10,7 @@ import java.util.Random;
 public class Ingres implements Runnable {
 
     private final Random aleatorio;
-    private final CompteBancari contenedor;
+    private final Buffer contenedor;
     private final int TIEMPOESPERA = 1000;
 
     /**
@@ -18,7 +18,7 @@ public class Ingres implements Runnable {
      *
      * @param contenedor Contenedor comú a les retirades i els ingresos
      */
-    public Ingres(CompteBancari contenedor, int idproductor) {
+    public Ingres(Buffer contenedor, int idproductor) {
         this.contenedor = contenedor;
         aleatorio = new Random();
     }

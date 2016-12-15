@@ -4,9 +4,9 @@ package activitat1.pkg7.m9.uf2;
 import java.util.ArrayList;
 
 
-public class CompteBancari {
+public class Buffer {
     //Array on es guardaran i s'agafaran els valors.
-    ArrayList<String> buffer = new ArrayList<String>();
+    ArrayList<String> buffer;
     
     int comptadorRetirar = 0, comptadorIngresar = 0;
 
@@ -17,7 +17,9 @@ public class CompteBancari {
      * es quedara en el bucle esperant fins que pugi i llavors realitzara la operació.
      * @param value 
      */
-    public synchronized void retirar(int value) {
+    public synchronized void retirar() {
+        
+        
 
         while (!contenedorLleno) {
             try {
@@ -28,8 +30,10 @@ public class CompteBancari {
             }
         }
  
+        buffer.get(comptadorRetirar);
         
-
+        comptadorRetirar ++;
+            
         contenedorLleno = !contenedorLleno;
         notifyAll();
 
@@ -49,8 +53,10 @@ public class CompteBancari {
             }
         }
         
+
+        //buffer.add(comptadorIngresar, value);
         
-        
+        comptadorIngresar ++;
         
         contenedorLleno = !contenedorLleno;
         notifyAll();

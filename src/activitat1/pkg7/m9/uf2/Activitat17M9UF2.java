@@ -4,7 +4,7 @@ package activitat1.pkg7.m9.uf2;
 
 public class Activitat17M9UF2 {
     
-    private static CompteBancari compte;
+    private static Buffer compte;
     private static Thread[] ingres;  
     private static Thread[] retirada;
 
@@ -19,7 +19,7 @@ public class Activitat17M9UF2 {
      * @param args 
      */
     public static void main(String[] args) {
-        compte = new CompteBancari();
+        compte = new Buffer();
         
 
         ingres = new Thread[CANTIDADINGRESOS];

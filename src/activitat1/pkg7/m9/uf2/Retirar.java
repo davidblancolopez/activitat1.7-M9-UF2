@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class Retirar implements Runnable {
 
-    private final CompteBancari contenedor;
+    private final Buffer contenedor;
     private final Random aleatorio;
     private final int TIEMPOESPERA = 1000;
 
@@ -18,7 +18,7 @@ public class Retirar implements Runnable {
      *
      * @param contenedor Contenedor comú a les retirades i els ingresos
      */
-    public Retirar(CompteBancari contenedor, int idconsumidor) {
+    public Retirar(Buffer contenedor, int idconsumidor) {
         this.contenedor = contenedor;
         aleatorio = new Random();
     }
@@ -29,10 +29,8 @@ public class Retirar implements Runnable {
      */
     public void run() {
         while (Boolean.TRUE) {
-            
-            int quitar = aleatorio.nextInt(10);
-            
-            contenedor.retirar(quitar);
+                        
+            contenedor.retirar();
             try {
                 Thread.sleep(TIEMPOESPERA);
             } catch (InterruptedException e) {
