@@ -14,7 +14,7 @@ public class CompteBancari {
      */
     public synchronized void retirar(int value) {
 
-        while (contenedorLleno) {
+        while (!contenedorLleno) {
             try {
                 wait();
                 
@@ -22,11 +22,8 @@ public class CompteBancari {
                 System.err.println("Contenedor: Error en retirar -> " + e.getMessage());
             }
         }
-
-        contenedorLleno = !contenedorLleno;
+ 
         
-            
-
 
         contenedorLleno = !contenedorLleno;
         notifyAll();
@@ -47,7 +44,6 @@ public class CompteBancari {
             }
         }
         
-        contenedorLleno = !contenedorLleno;
         
         
         
