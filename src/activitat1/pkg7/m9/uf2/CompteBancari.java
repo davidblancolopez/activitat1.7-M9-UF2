@@ -1,10 +1,13 @@
 
 package activitat1.pkg7.m9.uf2;
 
+import java.util.ArrayList;
+
 
 public class CompteBancari {
     //Array on es guardaran i s'agafaran els valors.
-    int contenedor [] = new int[10];
+    ArrayList<String> buffer = new ArrayList<String>();
+
     private boolean contenedorLleno = Boolean.FALSE;
 
     /**
