@@ -28,7 +28,7 @@ public class CompteBancari {
             }
         }
  
-        
+        buffer[comptadorRetirar] = ;
 
         contenedorLleno = !contenedorLleno;
         notifyAll();
