@@ -45,6 +45,9 @@ public class Buffer {
      * @param value 
      */
     public synchronized void ingresar(int value) {
+        
+        String num = String.valueOf(value);
+        
         while (contenedorLleno) {
             try {
                 wait();
@@ -54,7 +57,7 @@ public class Buffer {
         }
         
 
-        //buffer.add(comptadorIngresar, value);
+        buffer.add(comptadorIngresar, num);
         
         comptadorIngresar ++;
         
