@@ -30,8 +30,9 @@ public class Buffer {
             }
         }
  
-        buffer.get(comptadorRetirar);
+        String retirat = buffer.get(comptadorRetirar);
         buffer.remove(comptadorRetirar);
+        System.out.println("Retirat: " + retirat);
         
         comptadorRetirar ++;
             
@@ -59,6 +60,8 @@ public class Buffer {
         
 
         buffer.add(comptadorIngresar, num);
+        
+        System.out.println("Introduit: " + num);
         
         comptadorIngresar ++;
         
