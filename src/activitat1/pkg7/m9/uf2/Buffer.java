@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Buffer {
     //Array on es guardaran i s'agafaran els valors.
-    ArrayList<String> buffer;
+    ArrayList<String> buffer = new ArrayList<String>(5);
     
     int comptadorRetirar = 0, comptadorIngresar = 0;
 
