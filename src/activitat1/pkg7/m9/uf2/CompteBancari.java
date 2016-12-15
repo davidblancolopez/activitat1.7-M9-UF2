@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class CompteBancari {
     //Array on es guardaran i s'agafaran els valors.
     ArrayList<String> buffer = new ArrayList<String>();
+    
+    int comptadorRetirar = 0, comptadorIngresar = 0;
 
     private boolean contenedorLleno = Boolean.FALSE;
 
