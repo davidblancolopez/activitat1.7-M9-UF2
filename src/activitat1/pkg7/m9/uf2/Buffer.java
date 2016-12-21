@@ -20,7 +20,7 @@ public class Buffer {
      */
     public synchronized void retirar() {
 
-        while (!contenedorLleno) {
+        while (contenedorLleno) {
             try {
                 wait();
 
@@ -75,8 +75,6 @@ public class Buffer {
      * @param value
      */
     public synchronized void ingresar(int value) {
-
-        String num = String.valueOf(value);
 
         while (contenedorLleno) {
             try {
