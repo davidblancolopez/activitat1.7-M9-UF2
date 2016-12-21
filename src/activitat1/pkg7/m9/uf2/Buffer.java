@@ -51,14 +51,14 @@ public class Buffer {
         }
 
 //        El seguent bucle ens mostra tot el buffer.
-        System.out.print("BUFFER [");
+        System.out.print("BUFFER: ");
         for (int i = 0; i < buffer.length; i++) {
             System.out.print(buffer[i] + ",");
         }
 
 //        Es mostra la posició en que esta l'apuntador de retirar.'
         int apuntadorRetirar = apuntador + 1;
-        System.out.print("]" + "Posicio de treure" + apuntadorRetirar + "\n");
+        System.out.print("   " + "Posicio de treure" + apuntadorRetirar + "\n");
 
 //       Es notifica a tots els fils que esta lliure el contenedor.
         contenedorLleno = !contenedorLleno;
@@ -103,7 +103,7 @@ public class Buffer {
         }
         
 //        El seguent bucle ens mostra tot el buffer.
-        System.out.print("BUFFER [");
+        System.out.print("BUFFER: ");
         for (int i = 0; i < buffer.length; i++) {
             System.out.print(buffer[i] + ",");
 
@@ -111,7 +111,7 @@ public class Buffer {
         
 //        Es mostra la posició en que esta l'apuntador d' ingressar.'
         int apuntadorIngressar = apuntador + 1;
-        System.out.print("]" + "Posicio de meter" + apuntadorIngressar + "\n");
+        System.out.print("   " + "Posicio de meter" + apuntadorIngressar + "\n");
 
 //       Es notifica a tots els fils que esta lliure el contenedor.
         contenedorLleno = !contenedorLleno;
