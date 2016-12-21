@@ -12,7 +12,7 @@ public class Buffer {
     private boolean contenedorLleno = Boolean.FALSE;
 
     /**
-     * Metode que s'encarrega de retirar els diners. Si no es pot accedir es
+     * Metode que s'encarrega de retirar els numeros de l'array. Si no es pot accedir es
      * quedara en el bucle esperant fins que pugi i llavors realitzara la
      * operació.
      *
@@ -68,7 +68,7 @@ public class Buffer {
     }
 
     /**
-     * Metode que s'encarrega de realitzar l'ingres de diners. Si no es pot
+     * Metode que s'encarrega de realitzar l'ingres de numeros a l'array. Si no es pot
      * accedir es quedara en el bucle esperant fins que pugi i llavors
      * realitzara la operació.
      *
